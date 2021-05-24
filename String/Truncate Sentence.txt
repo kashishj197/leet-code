@@ -1,0 +1,24 @@
+class Solution {
+    public String truncateSentence(String s, int k) {
+        // String[] s2 = s.split(" ");
+        // String s3 = "";
+        // for (int i=0; i<k-1; i++) {
+        //     s3+=s2[i]+" ";
+        // }
+        // s3+=s2[k-1];
+        // return s3;
+        
+        String s3 = "";
+        int count = 0;
+        for (int i=0; i<s.length() && count != k; i++) {
+            if (s.substring(i, i+1).equals(" ")) {
+                count++;
+            }
+            if (count != k) {
+                s3 += s.substring(i, i+1);
+            }
+        }
+        
+        return s3;
+    }
+}
